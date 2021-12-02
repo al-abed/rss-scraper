@@ -12,6 +12,15 @@ app = Celery('tasks')
 # Sets the configuration file
 app.config_from_object('celeryconfig')
 
+# Beat config (time-delay between tasks)
+app.conf.beat_schedule = {
+    'add-every-30-seconds': {
+        'task': 'tasks.rss',
+        'schedule': 30.0,
+        'args': (16, 16)
+    },
+}
+
 
 # saves the scraped data
 @app.task
