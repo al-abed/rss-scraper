@@ -9,36 +9,20 @@ from datetime import datetime
 
 app = Celery('tasks')
 
-app.conf.timezone = 'UTC'
+# Sets the configuration file
+app.config_from_object('celeryconfig')
 
-app.conf.beat_schedule = {
-    # executes every 1 minute
-    'scraping-task-one-min': {
-        'task': 'tasks.rss',
-        'schedule': crontab(),
-    },
-    # # executes every 15 minutes
-    # 'scraping-task-fifteen-min': {
-    #     'task': 'tasks.rss',
-    #     'schedule': crontab(minute='*/15')
-    # },
-    # # executes daily at midnight
-    # 'scraping-task-midnight-daily': {
-    #     'task': 'tasks.rss',
-    #     'schedule': crontab(minute=0, hour=0)
-    # }
-}
 
-#saves the scraped data
+# saves the scraped data
 @app.task
 def save(article_list):
 
-    # timestamp and filename
+    # timestamp & filename
     timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
 
     filename = 'rss-{}.json'.format(timestamp)
 
-    # creating our articles file with timestamp
+    # generating the output file
     with open(filename, 'w') as outfile:
         json.dump(article_list, outfile)
 
@@ -51,22 +35,21 @@ def rss():
         print('Started scraping')
         print('{}'.format('-' * 40))
 
-        #Execute request and parse w/ XML
+        # Execute request and parse w/ XML
         r = requests.get('https://tools.cdc.gov/api/v2/resources/media/404952.rss')
         soup = BeautifulSoup(r.content, features='xml')
 
-        #Only scrape the items that I want.
+        # Only scrape the items that I want.
         articles = soup.findAll('item')
 
-        # for each "item" I want, parse it into a list
+        # iterate through article 'item's and parse into list
         for a in articles:
             title = a.find('title').text
             description = a.find('description').text
             link = a.find('link').text
             published = a.find('pubDate').text
 
-            # create an "article" object with the data
-            # from each "item"
+            # create an "article" object with the data from each item
             article = {
                 'title': title,
                 'description': description,
