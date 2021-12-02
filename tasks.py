@@ -29,14 +29,14 @@ app.conf.beat_schedule = {
     # }
 }
 
-# save function
+#saves the scraped data
 @app.task
-def save_function(article_list):
+def save(article_list):
 
     # timestamp and filename
     timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
 
-    filename = 'articles-{}.json'.format(timestamp)
+    filename = 'rss-{}.json'.format(timestamp)
 
     # creating our articles file with timestamp
     with open(filename, 'w') as outfile:
