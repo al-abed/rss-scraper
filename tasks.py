@@ -80,7 +80,7 @@ def rss():
             article_list.append(article)
         
         print('Successfully finished scraping')
-        return save_function(article_list)
+        return save(article_list)
     except Exception as e:
         print('The scraping job failed. See exception:')
         print(e)
