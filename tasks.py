@@ -52,7 +52,7 @@ def rss():
         # Only scrape the items that I want.
         articles = soup.findAll('item')
 
-        # iterate through article 'item's and parse into list
+        # iterate through items and parse into list
         for a in articles:
             title = a.find('title').text
             description = a.find('description').text
