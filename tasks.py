@@ -13,12 +13,13 @@ app = Celery('tasks')
 app.config_from_object('celeryconfig')
 
 # Beat config (time-delay between tasks)
+# scheduled task execution
 app.conf.beat_schedule = {
-    'add-every-30-seconds': {
+    # every minute
+    'task-one-min': {
         'task': 'tasks.rss',
-        'schedule': 30.0,
-        'args': (16, 16)
-    },
+        'schedule': crontab()
+    }
 }
 
 
