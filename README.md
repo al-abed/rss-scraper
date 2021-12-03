@@ -25,11 +25,11 @@ Packages/Libraries:
 Message Broker:
 + [RabbitMQ](https://www.rabbitmq.com/) ~ Sends messages for the Celery workers to execute
 
-OPTIONAL:
+OPTIONAL:<br>
 If you are having issues running the code such as receiving an error along the lines of...<br>
 `"Are you missing an xml tree parser?"`<br>
 Then if you install the python library:
-+ [lxml](https://lxml.de/index.html)
++ [lxml](https://lxml.de/index.html) ~ Python XML/HTML parser <br>
 It should correct your issues.
 
 ## Getting Started <a name="getting_started"></a>
@@ -41,13 +41,20 @@ RabbitMQ - Starting the service
 Windows: an application that you may run<br>
 Linux: (Debian/Ubuntu)<br>
 Start:
-``` $ sudo rabbitmq-server ``` <br>
+    ``` 
+    $ sudo rabbitmq-server 
+    ``` 
+<br>
 Shutdown:
-``` $ sudo rabbitmqctl shutdown ```
+    ``` 
+    $ sudo rabbitmqctl shutdown 
+    ```
 
 Celery
 
-``` $ celery -A tasks worker -B -l INFO ```
+    ``` 
+    $ celery -A tasks worker -B -l INFO 
+    ```
 
 ## TO-DO <a name="to-do"></a>
 + Implement the format for tasks to be retrieved from a list
