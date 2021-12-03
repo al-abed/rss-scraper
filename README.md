@@ -28,8 +28,11 @@ Message Broker:
 OPTIONAL:<br>
 If you are having issues running the code such as receiving an error along the lines of...<br>
 `"Are you missing an xml tree parser?"`<br>
+
 Then if you install the python library:
-+ [lxml](https://lxml.de/index.html) ~ Python XML/HTML parser <br>
+
+[lxml](https://lxml.de/index.html) ~ Python XML/HTML parser
+
 It should correct your issues.
 
 ## Getting Started <a name="getting_started"></a>
@@ -39,20 +42,23 @@ From there you may then just execute Celery commands in the terminal.
 RabbitMQ - Starting the service
 
 Windows: an application that you may run<br>
+
 Linux: (Debian/Ubuntu)<br>
 Start:
-    ``` 
+
+    ```
     $ sudo rabbitmq-server 
-    ``` 
-<br>
+    ```
+
 Shutdown:
-    ``` 
+
+    ```
     $ sudo rabbitmqctl shutdown 
     ```
 
 Celery
 
-    ``` 
+    ```
     $ celery -A tasks worker -B -l INFO 
     ```
 
