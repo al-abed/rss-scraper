@@ -1,4 +1,6 @@
-# RSS Feed Scraper ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+# <div align="center"> RSS Feed Scraper 
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) 
+</div>
 - - -
 
 ## Table of Contents
@@ -25,7 +27,7 @@ Message Broker:
 + [RabbitMQ](https://www.rabbitmq.com/) ~ Sends messages for the Celery workers to execute
 
 OPTIONAL:<br>
-If you are having issues running the code such as receiving an error along the lines of...
+If you are having issues running the code such as receiving an error along the lines of...<br>
 `"Are you missing an xml tree parser?"`
 
 Then if you install the python library:
@@ -66,4 +68,4 @@ Celery
 + Utilize selenium to scrape data other than RSS feeds
 + *More on the way*
 
-#### [Inspiration](https://codeburst.io/automated-web-scraping-with-python-and-celery-ac02a4a9ce51)
+#### <div align="center">[Inspiration](https://codeburst.io/automated-web-scraping-with-python-and-celery-ac02a4a9ce51)</div>
