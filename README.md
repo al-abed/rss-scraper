@@ -1,6 +1,5 @@
 # <div align="center"> RSS Feed Scraper 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) 
-</div>
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) </div>
 - - -
 
 ## Table of Contents
