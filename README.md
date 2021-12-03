@@ -1,5 +1,4 @@
-# RSS Feed Scraper
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]
+# RSS Feed Scraper ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 - - -
 
 ## Table of Contents
@@ -26,8 +25,8 @@ Message Broker:
 + [RabbitMQ](https://www.rabbitmq.com/) ~ Sends messages for the Celery workers to execute
 
 OPTIONAL:<br>
-If you are having issues running the code such as receiving an error along the lines of...<br>
-`"Are you missing an xml tree parser?"`<br>
+If you are having issues running the code such as receiving an error along the lines of...
+`"Are you missing an xml tree parser?"`
 
 Then if you install the python library:
 
@@ -46,21 +45,21 @@ Windows: an application that you may run<br>
 Linux: (Debian/Ubuntu)<br>
 Start:
 
-    ```
+    
     $ sudo rabbitmq-server 
-    ```
+    
 
 Shutdown:
 
-    ```
+    
     $ sudo rabbitmqctl shutdown 
-    ```
+    
 
 Celery
 
-    ```
+    
     $ celery -A tasks worker -B -l INFO 
-    ```
+    
 
 ## TO-DO <a name="to-do"></a>
 + Implement the format for tasks to be retrieved from a list
