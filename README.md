@@ -1,6 +1,5 @@
 # RSS Feed Scraper
-<br>
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]
 - - -
 
 ## Table of Contents
@@ -27,8 +26,8 @@ Message Broker:
 + [RabbitMQ](https://www.rabbitmq.com/) ~ Sends messages for the Celery workers to execute
 
 OPTIONAL:
-If you are having issues running the code such as receiving an error along the lines of...
-`"Are you missing an xml tree parser?"`
+If you are having issues running the code such as receiving an error along the lines of...<br>
+`"Are you missing an xml tree parser?"`<br>
 Then if you install the python library:
 + [lxml](https://lxml.de/index.html)
 It should correct your issues.
@@ -38,17 +37,17 @@ Essentially, you have to ensure that the RabbitMQ service is always running.
 From there you may then just execute Celery commands in the terminal.
 
 RabbitMQ - Starting the service
-- - -
-Windows: an application that you may run
-Linux: (Debian/Ubuntu)
+
+Windows: an application that you may run<br>
+Linux: (Debian/Ubuntu)<br>
 Start:
-` $ sudo rabbitmq-server `
+``` $ sudo rabbitmq-server ``` <br>
 Shutdown:
-` $ sudo rabbitmqctl shutdown `
+``` $ sudo rabbitmqctl shutdown ```
 
 Celery
-- - -
-` $ celery -A tasks worker -B -l INFO `
+
+``` $ celery -A tasks worker -B -l INFO ```
 
 ## TO-DO <a name="to-do"></a>
 + Implement the format for tasks to be retrieved from a list
